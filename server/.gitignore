@@ -1,0 +1,7 @@
+node_modules/
+*.log
+.eslintcache
+.env
+dist/
+.nuxt/
+.DS_Store
