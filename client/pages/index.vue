@@ -1,14 +1,20 @@
 <template>
-  <Header />
+  <div>
+    <Header />
+    <RomanConversionForm />    
+  </div>
 </template>
 
 <script>
 import Header from "~/components/TechTest/Header";
+import RomanConversionForm from "~/components/TechTest/RomanConversionForm";
+
 export default {
   name: 'home',
-   components: {
-        Header,
-    },
+  components: {
+    Header,
+    RomanConversionForm,
+  },
 }
 </script>
 

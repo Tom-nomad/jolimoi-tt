@@ -44,7 +44,7 @@ export default {
     '@nuxtjs/axios'
   ],
   axios: {
-    baseURL: 'http://localhost:4000', // Used as fallback if no runtime config is provided
+    baseURL: 'http://localhost:8000', // Used as fallback if no runtime config is provided
   },
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
@@ -53,5 +53,11 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+  publicRuntimeConfig: {
+    axios: {
+        baseUrl: "http://localhost:8000",
+        withCredentials: true
+    },
+},
 }

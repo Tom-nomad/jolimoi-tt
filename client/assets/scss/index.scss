@@ -153,7 +153,20 @@
         line-height: 1.4em;
         font-size: 1.5rem;
         color: $black-color;
-        font-family: "Montserrat";
+        font-family: "Montserrat", sans-serif;
     }
 
+    h3 {
+        line-height: 1.9em;
+        text-transform: uppercase;
+        color: $black-color;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    h4 {
+        line-height: 2em;
+        text-transform: uppercase;
+        color: $black-color;
+        font-family: "Montserrat", sans-serif;
+    }
 }

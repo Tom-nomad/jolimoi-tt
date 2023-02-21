@@ -8,22 +8,17 @@
   </div>
 </template>
 
-<script>
-export default {
-
-}
-</script>
 
 <style lang="scss" scoped>
 .header {
-    background-color: #fff;
-    width: 100%;
-    padding-top: 1rem;
-    padding-bottom: 0.5rem;
+  background-color: #fff;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .logo-header {
-    height: 2.5rem;
+  height: 3.75rem;
 }
 </style>>
 
