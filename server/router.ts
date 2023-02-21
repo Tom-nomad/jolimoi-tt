@@ -1,5 +1,6 @@
 import express, {Request, Response, Router} from "express";
-const {intToRomanMap} = require("../config/conversion.js")
+const {convertIntToRoman} = require('./services/ConversionService')
+
 const router: Router = express.Router();
 
 router.use(express.urlencoded({
@@ -9,14 +10,8 @@ router.use(express.urlencoded({
 router.post("/convertNumberToRoman", (req: Request,res: Response) => {
     try {
         let numberToConvert = req.body.numberToConvert;
-
-        let result: String = "";
-
-        for (const key of Object.keys(intToRomanMap)) {
-          const repeatCounter = Math.floor(numberToConvert / intToRomanMap[key]);
-          numberToConvert -= repeatCounter * intToRomanMap[key];
-          result += key.repeat(repeatCounter);
-        }
+        const result = convertIntToRoman(numberToConvert)
+        
         return res.send({
             result: result,
             convertedNumber: req.body.numberToConvert,

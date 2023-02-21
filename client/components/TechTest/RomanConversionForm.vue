@@ -22,7 +22,7 @@
     <div v-if="canDisplayResult " class="d-flex justify-center">
       <h4>Result: <span>{{result}}</span></h4>
     </div>
-    <ErrorMessage v-if="errorMessage" :error="errorMessage"/>
+    <ErrorMessage v-if="errorMessage && !result" :error="errorMessage"/>
   </div>
 </template>
 
