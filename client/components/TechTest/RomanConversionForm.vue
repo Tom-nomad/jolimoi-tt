@@ -69,6 +69,7 @@ export default {
         const eventSourceResult = new EventSource("//localhost:8000/convertNumberToRoman/sse");
         eventSourceResult.addEventListener("message", function (event) {
           console.log(JSON.parse(event.data));
+          // TODO: setup the data with the instance of the component
         });
         eventSourceResult.onerror = function () {
           eventSourceResult.close();
