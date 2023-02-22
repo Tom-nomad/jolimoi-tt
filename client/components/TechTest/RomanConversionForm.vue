@@ -60,12 +60,18 @@ export default {
     async convertNumberToRoman () {
       try {
         this.btnLoading = true;
-        const fetchConversionResult =   await this.$axios.post("/convertNumberToRoman", {
-          numberToConvert: this.numberToConvert
+        let sseResult
+        await this.$axios.get("/convertNumberToRoman/setResult", {
+          params: {
+            numberToConvert: this.numberToConvert
+          }
         });
-        if(fetchConversionResult?.data) {
-          this.result = fetchConversionResult.data.result;
-          this.convertedNumber = fetchConversionResult.data.convertedNumber
+        const eventSourceResult = new EventSource("//localhost:8000/convertNumberToRoman/sse");
+        eventSourceResult.addEventListener("message", function (event) {
+          console.log(JSON.parse(event.data));
+        });
+        eventSourceResult.onerror = function () {
+          eventSourceResult.close();
         }
         this.btnLoading = false;
       } catch (err) {
